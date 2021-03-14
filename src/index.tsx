@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { observer } from "mobx-react-lite";
 
 import store from './store';
-import Store from './store/types.ts';
+import Store from './store/types';
 
 setInterval(() => {
   store.increaseTimer();
