@@ -20,4 +20,8 @@ class Store {
   }
 }
 
-export default new Store();
+export type StoreType = {
+  secondsPassed: number,
+}
+
+export const store = new Store();
