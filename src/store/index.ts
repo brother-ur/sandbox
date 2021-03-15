@@ -1,15 +1,17 @@
 import { makeAutoObservable } from "mobx";
 
-class Store {
-  secondsPassed = 0;
+class MainStore {
   list = [];
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  increaseTimer() {
-    this.secondsPassed += 1;
+  async init() {
+    const result = await fetch('https://full-stats-start.herokuapp.com/api/v1/basketball/match/1')
+    const data = await result.json();
+
+     console.log(data);
   }
 
   async getList() {
@@ -24,4 +26,4 @@ export type StoreType = {
   secondsPassed: number,
 }
 
-export const store = new Store();
+export const store = new MainStore();
